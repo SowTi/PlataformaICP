@@ -6,6 +6,5 @@
 
 1 - Instalar Composer e executar bash na raiz: {$composer install} -- Instala Dependências.
 
-2 - Mudar Configurações do Banco no arquivo config/database.php -- Estas configurações são necessárias para comunicação com o banco.
 
 3 - Executar bash {$php artisan migrate} -- Atualiza Banco com tabelas necessárias para aplicação.
