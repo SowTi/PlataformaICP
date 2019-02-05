@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('activate/{token}', 'Auth\RegisterController@activate')
+    ->name('activate');
