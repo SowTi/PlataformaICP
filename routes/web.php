@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('activate/{token}', 'Auth\RegisterController@activate')
     ->name('activate');
+
+Route::get('/panel', 'PanelController@index')->name('panel');
