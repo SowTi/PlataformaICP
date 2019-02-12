@@ -21,3 +21,5 @@ Route::get('activate/{token}', 'Auth\RegisterController@activate')
     ->name('activate');
 
 Route::get('/dashboard', 'ScreenController@dashboard')->name('dash');
+
+Route::get('/users', 'ScreenController@users')->name('users');
