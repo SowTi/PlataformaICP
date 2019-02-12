@@ -1,9 +1,10 @@
-@extends('layouts.app')
+<!-- Dashboard "Tela inicial" -->
+ @extends('layouts.app')
 
-@section('content')
+  @section('content')
 
- 123123112313212
- Teste
+  Tela INICIAL
 
 
-@endsection
+
+ @endsection
