@@ -21,8 +21,15 @@ class ScreenController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+     // Tela Inicial
     public function dashboard()
     {
         return view('dash');
+    }
+     //Tela de usuários
+    public function users()
+    {
+        return view('users');
     }
 }
