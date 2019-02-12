@@ -43,7 +43,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('dash') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -120,7 +120,9 @@
         CONFIG
       </div>
 -->
+
       <!-- Nav Item - Pages Collapse Menu -->
+
       <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-lock"></i>
@@ -129,7 +131,7 @@
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">-------------</h6>
-            <a class="collapse-item" href="#">Usuários</a>
+            <a class="collapse-item" href="{{ route('users') }}">Usuários</a>
             <a class="collapse-item" href="#">Perfis</a>
             <a class="collapse-item" href="#">Equipes</a>
           </div>
@@ -173,7 +175,7 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Procurar..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
@@ -333,7 +335,7 @@
                   Atividades
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Sair
                 </a>
@@ -347,25 +349,23 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-           @yield('content')
-
           <!-- Page Heading -->
-
+        @yield('head')
 
         </div>
+        @yield('body')
         <!-- /.container-fluid -->
-
       </div>
-      <!-- End of Main Content -->
-
       <!-- Footer -->
+        @yield('foot')
+
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>ICP Latin America</span>
           </div>
         </div>
+
       </footer>
       <!-- End of Footer -->
 
@@ -379,6 +379,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+
 
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -402,7 +403,8 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
+
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -411,6 +413,11 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+
+
+ <!-- Script Tela de  -->
+@yield('scripts')
 
 </body>
 
