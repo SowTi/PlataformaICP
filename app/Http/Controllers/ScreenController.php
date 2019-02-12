@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PanelController extends Controller
+class ScreenController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,8 +21,8 @@ class PanelController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function dashboard()
     {
-        return view('/panel');
+        return view('dash');
     }
 }

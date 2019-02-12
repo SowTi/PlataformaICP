@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/panel') }}">Painel</a>
+                        <a href="{{ url('/dashboard') }}">Painel</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  
+
                     Plataforma ICP
                 </div>
 

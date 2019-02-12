@@ -20,4 +20,4 @@ Auth::routes();
 Route::get('activate/{token}', 'Auth\RegisterController@activate')
     ->name('activate');
 
-Route::get('/panel', 'PanelController@index')->name('panel');
+Route::get('/dashboard', 'ScreenController@dashboard')->name('dash');
