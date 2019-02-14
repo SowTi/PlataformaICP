@@ -13,6 +13,8 @@ class User extends Authenticatable
      const ACTIVE = 1;
      const INACTIVE = 0;
 
+   public $timestamps=false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -28,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
     ];
 
     /**
