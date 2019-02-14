@@ -39,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -88,7 +88,7 @@ class RegisterController extends Controller
 
                 event(new Registered($user = $this->create($request->all())));
 
-                return redirect()->route('login')
+                return redirect()->route('users.index')
                     ->with(['success' => 'Congratulations! your account is registered, you will shortly receive an email to activate your account.']);
             }
 
@@ -106,7 +106,7 @@ class RegisterController extends Controller
 
                 $user->update(['token' => null, 'active' => User::ACTIVE]);
 
-                return redirect()->route('login')
+                return redirect()->route('users.index')
                     ->with(['success' => 'Congratulations! your account is now activated.']);
   }
 }
