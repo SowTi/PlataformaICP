@@ -79,9 +79,7 @@
                   <div class="text-center">
                     <a class="small" href="{{ route('password.request') }}">Esqueceu sua senha?</a>
                   </div>
-                  <div class="text-center">
-                    <a class="small" href="{{ route('register') }}">Criar conta!</a>
-                  </div>
+
                 </div>
               </div>
             </div>
