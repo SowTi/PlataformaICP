@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'O usuário ou senha informados não constam na base de dados.',
-    'throttle' => 'Muitas tentativas consecutivas de login. Tente novamente mais tarde.',
+    'failed' => 'Essas credenciais não correspondem aos nossos registros.',
+    'throttle' => 'Muitas tentativas de login. Tente novamente em :seconds segundos.',
 
 ];
