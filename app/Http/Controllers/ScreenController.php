@@ -1,5 +1,8 @@
 <?php
 
+
+//Controlador destinado a autorização de rotas que não possuem controlador dedicado
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -17,19 +20,16 @@ class ScreenController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     *
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-     // Tela Inicial
+
+
+     // Dashboard
     public function dashboard()
     {
         return view('dash');
-    }
-     //Tela de usuários
-    public function users()
-    {
-        return view('users');
     }
 }
