@@ -7,8 +7,8 @@
 
 <!-- Tabela de Usuários -->
 <h1 class="h3 mb-2 text-gray-800">Usuários
-  <a class="btn btn-primary btn-circle" data-toggle="modal" data-target="#adduser">
-    <i class="fas fa-plus  text-white-50">
+  <a class="btn btn-success btn-circle btn-sm" data-toggle="modal" data-target="#adduser">
+    <i class="fas fa-plus  text-gray-100">
     </i>
   </a>
 </h1>
@@ -26,22 +26,22 @@
         </div>
       </div>
       @endif
-      @if ($errors->has('name'))
+      @if ($errors->has('nome'))
       <div class="col-lg-6 mb-4">
         <div class="card bg-danger text-white shadow">
           <div class="card-body">
             Erro
-            <div class="text-white-50 small">{{ $errors->first('name') }}</div>
+            <div class="text-white-50 small">{{ $errors->first('nome') }}</div>
           </div>
         </div>
       </div>
       @endif
-      @if ($errors->has('password'))
+      @if ($errors->has('senha'))
       <div class="col-lg-6 mb-4">
         <div class="card bg-danger text-white shadow">
           <div class="card-body">
             Erro
-            <div class="text-white-50 small">{{ $errors->first('password') }}</div>
+            <div class="text-white-50 small">{{ $errors->first('senha') }}</div>
           </div>
         </div>
       </div>
@@ -56,30 +56,60 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Id</th>
             <th>Nome</th>
             <th>Email</th>
-            <th>Ativo</th>
+            <th>Cargo</th>
+            <th>Telefone</th>
+            <th>Equipe</th>
+            <th>Status</th>
             <th>Opções</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($users as $users)
+
+        @foreach ($users as $users)
+
+          <?php
+             if ($users->active == 1)
+              $border="btn-success btn-circle btn-sm fas fa-check";
+             else{
+              $border="btn-danger btn-circle btn-sm fas fa-ban";
+             }
+
+             if($users->active == 1)
+               $delhide='"';
+              else {
+               $delhide='hidden="true"';
+              }
+          ?>
+
           <tr>
+
             <td>{{ $users->id }}</td>
             <td>{{ $users->name }}</td>
             <td>{{ $users->email }}</td>
-            <td>{{ $users->active }}</td>
+            <td>Cargo</td>
+            <td>Telfone</td>
+            <td>Equipe</td>
+
+
+
+            <td><i class="{{$border}}"></i></td>
+
+
             <td>
-              <a class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#edtuser-{{$users->id, $users->name, $users->email}}">
-                <span class="icon text-white-50">
+              <a {{$delhide}} class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#edtuser-{{$users->id, $users->name, $users->email}}">
+                <span class="icon text-gray-100">
                   <i class="fas fa-edit"></i>
                 </span>
               </a>
 
-              <a class="btn btn-danger btn-icon-split" data-toggle="modal" data-target="#cndelete-{{$users->id, $users->name}}">
-                <span class="icon text-white-50">
-                  <i class="fas fa-trash"></i>
+
+              <a {{$delhide}} class="btn btn-danger btn-icon-split" data-toggle="modal" data-target="#cndelete-{{$users->id, $users->name}}">
+                <span class="icon text-gray-100">
+                  <i class="fas fa-minus-circle"></i>
+
                 </span>
               </a>
             </td>
@@ -93,7 +123,6 @@
     </div>
   </div>
 </div>
-
 
 
 

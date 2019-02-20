@@ -2,10 +2,18 @@
 
 namespace App\Data;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Users extends Model
+class Users extends Authenticatable
 {
+  
+  use Notifiable;
+
+   const ACTIVE = 1;
+   const INACTIVE = 0;
+
     protected $table='users';
 
     protected $primarykey="id";
@@ -16,10 +24,11 @@ class Users extends Model
        'name',
        'email',
        'password',
-       'active'
+       'token',
+       'active',
 
     ];
-    protected $guarded =[
+    protected $hidden =[
       'token',
       'remember_token'
     ];

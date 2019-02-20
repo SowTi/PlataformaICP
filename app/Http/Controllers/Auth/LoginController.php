@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Data\Users;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -53,7 +53,7 @@ class LoginController extends Controller
           return [
               $field => $request->get($this->username()),
               'password' => $request->get('password'),
-              'active' => User::ACTIVE,
+              'active' => Users::ACTIVE,
           ];
       }
 
@@ -83,7 +83,7 @@ class LoginController extends Controller
           $messages = ["{$this->username()}.exists" => 'The account you are trying to login is not activated or it has been disabled.'];
 
           $this->validate($request, [
-              $this->username() => "required|exists:users,{$field},active," . User::ACTIVE,
+              $this->username() => "required|exists:users,{$field},active," . Users::ACTIVE,
               'password' => 'required',
           ], $messages);
       }

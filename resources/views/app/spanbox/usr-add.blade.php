@@ -8,9 +8,12 @@
           <span aria-hidden="true">×</span>
         </button>
       </div>
+
       <div class="card-body">
 
      <form class="user" method="POST" action="{{ route('users.register') }}">
+
+
        @csrf
                     <div class="form-group row">
                       <div class="col-sm-6 mb-3 mb-sm-0">
@@ -41,7 +44,7 @@
 
                     <div class="form-group row">
                       <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-user" id="password" placeholder="Senha" name="password" required>
+                        <input type="password" class="form-control{{ $errors->has('senha') ? ' is-invalid' : '' }} form-control-user" id="password" placeholder="Senha" name="password" required>
 
                         @if ($errors->has('password'))
 
@@ -56,12 +59,18 @@
                       <div class="col-sm-6">
                         <input type="password" class="form-control form-control-user" id="password-confirm" placeholder="Confirmação de Senha" name="password_confirmation" required>
                       </div>
+
+
+
                     </div>
 
+
       </div>
+
+
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-        <button class="btn btn-primary" type="submit" >Adcionar</button>
+        <button class="btn btn-success" type="submit" >Adcionar</button>
     </form>
       </div>
      </div>

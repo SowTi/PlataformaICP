@@ -8,7 +8,6 @@ use App\Http\Requests\App\UsersFormRequest;
 use App\Data\Users;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
-use App\User;
 use DB;
 
  class UsersController extends Controller
@@ -35,7 +34,7 @@ use DB;
 
      if ($request){
        $query=trim($request->get);
-       $users=DB::table('users')->where('email','<>',Auth::user('email'));
+       $users=DB::table('users')->where('email','<>','');
 
       $users = $users->get();
 

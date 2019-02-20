@@ -60,9 +60,6 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="{{ route('register') }}">Crie uma conta!</a>
-                  </div>
-                  <div class="text-center">
                     <a class="small" href="{{ route('login') }}">Já tem uma conta? Entre!</a>
                   </div>
                 </div>
