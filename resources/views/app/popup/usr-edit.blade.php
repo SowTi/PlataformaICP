@@ -15,11 +15,11 @@
                     <input hidden="true" name="id" type="text" value="{{$users->id}}" id="id"></input>
                     <div class="form-group row">
                       <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input value="{{$users->name}}" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form-control-user" id="name" placeholder="Nome" name="name" required autofocus>
+                        <input value="{{$users->name}}" type="text" class="form-control form-control-user" id="name" placeholder="Nome" name="name" required autofocus>
 
                       </div>
                       <div class="col-sm-6">
-                        <input value="{{$users->email}}" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-user" id="email" placeholder="Email" name="email" required>
+                        <input value="{{$users->email}}" type="email" class="form-control form-control-user" id="email" placeholder="Email" name="email" required>
 
                       </div>
                     </div>

@@ -114,8 +114,8 @@
               </a>
             </td>
           </tr>
-           @include('app.spanbox.usr-edit')
-           @include('app.spanbox.usr-delete')
+           @include('app.popup.usr-edit')
+           @include('app.popup.usr-delete')
            @endforeach
         </tbody>
 
@@ -128,7 +128,7 @@
 
 
 
-@include('app.spanbox.usr-add')
+@include('app.popup.usr-add')
 
 
 @endsection

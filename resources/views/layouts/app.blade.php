@@ -104,10 +104,10 @@
             <h6 class="collapse-header">-------------</h6>
             <a class="collapse-item" href="#">Atividades</a>
             <a class="collapse-item" href="#">Escopo</a>
-            <a class="collapse-item" href="#">Segmento</a>
-            <a class="collapse-item" href="#">Departamento</a>
+            <a class="collapse-item" href="{{ route('seg.index') }}">Segmento</a>
+            <a class="collapse-item" href="{{ route('dept.index') }}">Departamento</a>
             <a class="collapse-item" href="#">Origem</a>
-            <a class="collapse-item" href="#">Tratamento</a>
+            <a class="collapse-item" href="{{ route('trat.index') }}">Tratamento</a>
           </div>
         </div>
       </li>
@@ -317,7 +317,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                 <img class="img-profile rounded-circle" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDMxMS41NDEgMzExLjU0MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzExLjU0MSAzMTEuNTQxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTE1NS43NzEsMjYuMzMxQzY5Ljc0LDI2LjMzMSwwLDk2LjA3MSwwLDE4Mi4xMDJjMCwzNy40ODgsMTMuMjUsNzEuODgzLDM1LjMxNCw5OC43NjEgICAgYzMuNDA0LTI3LjI1NiwzMC42MjctNTAuMzA4LDY4LjgtNjEuMjI1YzEzLjk0NiwxMi45OTQsMzEuOTYsMjAuODc4LDUxLjY1NiwyMC44NzhjMTkuMjMzLDAsMzYuODk0LTcuNDg3LDUwLjY5OC0xOS45MzYgICAgYzM4LjUwMywxMS44NzEsNjUuMTQxLDM2LjI3LDY2LjAxNyw2NC42M2MyNC4yODQtMjcuNDcyLDM5LjA1Ni02My41NTUsMzkuMDU2LTEwMy4xMDggICAgQzMxMS41NDEsOTYuMDcxLDI0MS44MDEsMjYuMzMxLDE1NS43NzEsMjYuMzMxeiBNMTU1Ljc3MSwyMjIuMDY5Yy05Ljk0NCwwLTE5LjMxNC0yLjczMi0yNy42MzQtNy40NjQgICAgYy0yMC4wNS0xMS40MDktMzMuODU1LTM0Ljc1Ni0zMy44NTUtNjEuNzExYzAtMzguMTQzLDI3LjU4My02OS4xNzYsNjEuNDg5LTY5LjE3NmMzMy45MDksMCw2MS40ODksMzEuMDMzLDYxLjQ4OSw2OS4xNzYgICAgYzAsMjcuMzY5LTE0LjIzNyw1MS4wMDQtMzQuNzg2LDYyLjIxNUMxNzQuMzc5LDIxOS41MjMsMTY1LjM0NiwyMjIuMDY5LDE1NS43NzEsMjIyLjA2OXoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"/>
               </a>
               <!-- Dropdown - User Information -->
@@ -330,7 +330,7 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Configurações
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{route('ativ.index')}}">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Atividades
                 </a>
