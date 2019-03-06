@@ -82,3 +82,12 @@ Route::resource('newtestusers', 'App\NewTestUserController');
   Route::post('ativ.update', 'App\AtivController@update')->name('ativ.update');
   Route::post('ativ.destroy', 'App\AtivController@destroy')->name('ativ.destroy');
   Route::post('ativ.create', 'App\AtivController@create')->name('ativ.create');
+
+  //Cadastros de Atividades
+
+  Route::resource('escp', 'App\EscpController');
+  Route::post('escp.create', 'App\EscpController@create')->name('escp.create');
+  Route::get('escp.add', 'App\EscpController@add')->name('escp.add');
+
+  Route::resource('facul', 'App\FaculController');
+  Route::get('facul.login', 'App\FaculController@login')->name('facul.login');
