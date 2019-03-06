@@ -35,6 +35,7 @@ class SegController extends Controller
      return view('App/Seg', ["seg"=>$seg]);
     }
   }
+
  public function create(request $request)
  {
    Seg::create([
@@ -43,7 +44,7 @@ class SegController extends Controller
   return Redirect::to('seg');
  }
 
- public function update(UsersFormRequest $request)
+ public function update(Request $request)
  {
    $id=$request->post('id');
    $seg=Seg::findOrFail($id);

@@ -102,8 +102,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">-------------</h6>
-            <a class="collapse-item" href="#">Atividades</a>
-            <a class="collapse-item" href="#">Escopo</a>
+            <a class="collapse-item" href="{{route('ativ.index')}}">Atividades</a>
+            <a class="collapse-item" href="{{route('escp.index')}}">Escopo</a>
             <a class="collapse-item" href="{{ route('seg.index') }}">Segmento</a>
             <a class="collapse-item" href="{{ route('dept.index') }}">Departamento</a>
             <a class="collapse-item" href="#">Origem</a>
@@ -244,7 +244,7 @@
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
+                      <i class="fas fa-exclamatialon-triangle text-white"></i>
                     </div>
                   </div>
                   <div>
@@ -330,7 +330,7 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Configurações
                 </a>
-                <a class="dropdown-item" href="{{route('ativ.index')}}">
+                <a class="dropdown-item" href="">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Atividades
                 </a>

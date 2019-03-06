@@ -10,7 +10,7 @@
       </div>
       <div class="card-body">
 
-     <form class="user" method="post" action="{{route('seg.update')}}">
+     <form class="user" method="POST" action="{{route('seg.update')}}">
        @csrf
                     <input hidden="true" name="id" type="text" value="{{$seg->idsegmentos}}" id="id"></input>
                     <div class="form-group row">

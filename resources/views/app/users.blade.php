@@ -90,7 +90,7 @@
             <td>{{ $users->name }}</td>
             <td>{{ $users->email }}</td>
             <td>Cargo</td>
-            <td>Telfone</td>
+            <td>Telefone</td>
             <td>Equipe</td>
 
 

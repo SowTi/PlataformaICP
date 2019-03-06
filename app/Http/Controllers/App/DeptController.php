@@ -43,7 +43,7 @@ class DeptController extends Controller
   return Redirect::to('dept');
  }
 
- public function update(UsersFormRequest $request)
+ public function update(Request $request)
  {
    $id=$request->post('id');
    $dept=Dept::findOrFail($id);

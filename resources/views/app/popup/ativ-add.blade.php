@@ -11,8 +11,11 @@
 
       <div class="card-body">
 
-     <form class=
-      method="POST" action="{{ route('ativ.create') }}">
+     <form method="POST" action="{{ route('ativ.create') }}">
+
+
+
+
 
 
        @csrf
