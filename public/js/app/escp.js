@@ -1,10 +1,33 @@
+
+items = [];
+
+
 function addItem(ID){
+
+
 
     var table = document.getElementById("datasTable");
     var candidate = document.getElementById(ID);
 
-    var code = document.getElementById(code, "value");
-    var description = document.getElementById(description, "value");
+   var code1 = 'code';
+
+   var co = code1.concat(ID);
+
+    var code = document.getElementById(co);
+
+    var description1 = 'desc';
+
+    var ds =  description1.concat(ID);
+
+    var description = document.getElementById(ds);
+
+    var escopo1 = 'escp';
+
+    var escpo =  escopo1.concat(ID);
+
+   escopo = document.getElementById(escpo);
+
+
 
     var tr = document.createElement("tr");
 
@@ -16,6 +39,11 @@ function addItem(ID){
     var btn = document.createElement("button");
     var icn = document.createElement("i")
 
+
+   items.push(ID)
+
+
+
     btn.setAttribute('id',candidate.value);
     btn.setAttribute('type',"button");
     btn.setAttribute('id',ID);
@@ -24,8 +52,8 @@ function addItem(ID){
     icn.setAttribute('class',"fas fa-eraser");
 
     td_id.appendChild(document.createTextNode(ID));
-    td_code.appendChild(document.createTextNode(code));
-    td_description.appendChild(document.createTextNode(description));
+    td_code.appendChild(document.createTextNode(code.value));
+    td_description.appendChild(document.createTextNode(description.value));
 
 
     table.appendChild(tr);
@@ -38,6 +66,9 @@ function addItem(ID){
     btn.appendChild(icn)
 
 
+
+
+
 }
 
 function removeItem(ID){
@@ -45,4 +76,26 @@ function removeItem(ID){
     var candidate = document.getElementById(ID);
     var item = document.getElementById(candidate.id);
     tr.removeChild(item);
+}
+
+
+function send(){
+
+   var candidate = document.getElementById('name');
+
+   var nm = candidate.value
+   var url = '/escp.add?items=' + JSON.stringify(items);
+   var url = url + '&id=' + JSON.stringify(escopo.value);
+   var url = url + '&name=' + JSON.stringify(nm);
+   window.location.href = url;
+
+
+
+}
+
+function edit(id){
+
+var url = '/escp.edit?id=' + JSON.stringify(id);
+window.location.href = url;
+
 }

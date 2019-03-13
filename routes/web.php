@@ -88,6 +88,6 @@ Route::resource('newtestusers', 'App\NewTestUserController');
   Route::resource('escp', 'App\EscpController');
   Route::post('escp.create', 'App\EscpController@create')->name('escp.create');
   Route::get('escp.add', 'App\EscpController@add')->name('escp.add');
-
-  Route::resource('facul', 'App\FaculController');
-  Route::get('facul.login', 'App\FaculController@login')->name('facul.login');
+  Route::post('escp.destroy', 'App\EscpController@destroy')->name('escp.destroy');
+  Route::get('escp.edit', 'App\EscpController@edit')->name('escp.edit');
+  Route::get('escp.update', 'App\EscpController@update')->name('escp.update');

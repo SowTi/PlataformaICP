@@ -4,7 +4,7 @@
 @section('head')
 
 <h1 class="h3 mb-2 text-gray-800">Escopo
-  <a class="btn btn-success btn-circle btn-sm" href="{{route('escp.add')}}">
+  <a class="btn btn-success btn-circle btn-sm" data-toggle="modal" data-target="#addescp">
     <i class="fas fa-plus  text-gray-100">
     </i>
   </a>
@@ -14,7 +14,7 @@
 <div class="card shadow mb">
 
   <div class="card-body">
-   <form class="user" method="post" action"{{route('escp.create')}}">
+   <form class="user">
 
      <!--Tabela -->
        <div class="card-body">
@@ -25,7 +25,6 @@
 
                  <th>Código</th>
                  <th>Nome</th>
-                 <th>Atividades</th>
                  <th>Opções</th>
                </tr>
              </thead>
@@ -36,27 +35,18 @@
                <tr>
 
                  <td>{{$escp->idescopos}}</td>
-                 <td>{{$escpt->nomeescopo}}</td>
-                 <td>teste</td>
-
-
-
-
-
-
-
-
-
+                 <td>{{$escp->nomeescopo}}</td>
 
                  <td>
-                   <a class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#edtuser-">
+
+                   <button class="btn btn-info btn-icon-split" type="button" onclick="edit({{$escp->idescopos}})">
+
                      <span class="icon text-gray-100">
                        <i class="fas fa-edit"></i>
                      </span>
-                   </a>
+                   </button>
 
-
-                   <a class="btn btn-danger btn-icon-split" data-toggle="modal" data-target="#cndelete-">
+                   <a class="btn btn-danger btn-icon-split" data-toggle="modal" data-target="#deleteescp-{{$escp->idescopos, $escp->nomeescopo}}">
                      <span class="icon text-gray-100">
                        <i class="fas fa-minus-circle"></i>
 
@@ -64,7 +54,7 @@
                    </a>
                  </td>
                </tr>
-
+              @include('app.popup.escp-delete')
               @endforeach
 
              </tbody>
@@ -78,6 +68,8 @@
 
 </div>
 
+@include('app.popup.escp-add')
+
 @endsection
 
 <!-- Scripts -->
@@ -85,4 +77,5 @@
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="js/app/users.js"></script>
+<script src="js/app/escp.js"></script>
 @endsection

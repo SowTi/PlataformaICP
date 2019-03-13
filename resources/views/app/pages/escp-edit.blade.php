@@ -6,7 +6,7 @@
   <div class="card shadow mb">
     <div class="modal-content">
     <div class="modal-header">
-    <h1 class="h3 mb-2 text-gray-800 modal-title">Novo Escopo</h1>
+    <h1 class="h3 mb-2 text-gray-800 modal-title">Editar {{$escp1->idescopos}}</h1>
 
 
 
@@ -15,17 +15,17 @@
    <div class="card-body">
 
 
-     <form method="POST" action="{{ route('escp.create') }}">
+     <form method="POST" action="{{ route('escp.update') }}">
 
 
        @csrf
                     <div class="form-group row">
 
                       <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input type="text" value="{{$escp->idescopos}}" class="form-control form-control-user" id="disabledInput" placeholder="ID" name="code" readonly>
+                        <input type="text" value="{{$escp1->idescopos}}" class="form-control form-control-user" id="disabledInput" placeholder="ID" name="code" readonly>
                       </div>
                       <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input type="text" value="{{$escp->nomeescopo}}" class="form-control form-control-user" id="name" placeholder="Nome" name="name" required autofocus>
+                        <input type="text" value="{{$escp1->nomeescopo}}" class="form-control form-control-user" id="name" placeholder="Nome" name="name" required autofocus>
                       </div>
 
                       </div>
@@ -68,10 +68,7 @@
                                                           <td>
 
                                                             <a class="btn btn-info btn-icon-split" onclick="addItem({{$ativ->idatividades}})">
-                                                              <input type="text" hidden="true" value="{{$ativ->codigoatividade}}"  id="code{{$ativ->idatividades}}"></input>
-                                                              <input type="text" hidden="true" value="{{$ativ->descricaoatividade}}"  id="desc{{$ativ->idatividades}}"></input>
-                                                              <input type="text" hidden="true" value="{{$ativ->idatividades}}"  id="{{$ativ->idatividades}}"></input>
-                                                              <input type="text" hidden="true" value="{{$escp->idescopos}}"  id="escp{{$ativ->idatividades}}"></input>
+
 
 
                                                               <span class="icon text-gray-100">
@@ -130,7 +127,7 @@
 
 
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" action="{{route('escp.index')}}">Cancelar</button>
+        <button class="btn btn-secondary" type="button" onclick="{{route('escp.index')}}">Cancelar</button>
         <button class="btn btn-success" type="button" onclick="send()">Adcionar</button>
     </form>
 
@@ -146,4 +143,5 @@
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="js/app/users.js"></script>
+<script src="js/app/escp.js"></script>
 @endsection
