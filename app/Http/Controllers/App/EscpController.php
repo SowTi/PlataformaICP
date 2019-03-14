@@ -101,7 +101,11 @@ foreach ($items as $item){
    $escp->nomeescopo=$name;
    $escp->update();
 }
-return Redirect::to('escp');
+return [
+  $name
+];
+
+
 }
 
 

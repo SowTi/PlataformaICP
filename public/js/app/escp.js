@@ -51,6 +51,10 @@ function addItem(ID){
     btn.setAttribute('class',"btn btn-danger btn-circle btn-sm");
     icn.setAttribute('class',"fas fa-eraser");
 
+
+
+
+
     td_id.appendChild(document.createTextNode(ID));
     td_code.appendChild(document.createTextNode(code.value));
     td_description.appendChild(document.createTextNode(description.value));
@@ -71,9 +75,9 @@ function addItem(ID){
 
 }
 
-function removeItem(ID){
-    var tr = document.getElementById("dataTables");
-    var candidate = document.getElementById(ID);
+function removeItem(xxx){
+    var tr = document.getElementById("datasTable");
+    var candidate = document.getElementById(xxx);
     var item = document.getElementById(candidate.id);
     tr.removeChild(item);
 }
@@ -92,6 +96,7 @@ function send(){
 
 
 }
+
 
 function edit(id){
 
