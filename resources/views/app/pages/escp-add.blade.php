@@ -3,6 +3,8 @@
 
 @section('head')
 
+
+
   <div class="card shadow mb">
     <div class="modal-content">
     <div class="modal-header">
@@ -22,6 +24,7 @@
                     <div class="form-group row">
 
                       <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" hidden="true" value="{{$escp->idescopos}}" id="code">
                         <input type="text" value="{{$escp->idescopos}}" class="form-control form-control-user" id="disabledInput" placeholder="ID" name="code" readonly>
                       </div>
                       <div class="col-sm-6 mb-3 mb-sm-0">
@@ -30,73 +33,7 @@
 
                       </div>
 
-                      <div class="dropdown mb-4">
-                                          <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Adcionar Atividades
-                                          </button>
-                                          <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
 
-                                            <div class="card shadow mb">
-
-                                              <!--Tabela -->
-                                                <div class="card-body">
-                                                  <div class="table-responsive noroll">
-                                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                      <thead>
-                                                        <tr>
-                                                          <th>Id</th>
-                                                          <th>Código</th>
-                                                          <th>Nome</th>
-                                                          <th>Opções</th>
-                                                        </tr>
-                                                      </thead>
-                                                      <tbody>
-
-                                                      @foreach ($ativ as $ativ)
-
-
-                                                        <tr>
-
-                                                          <td>{{ $ativ->idatividades }}</td>
-                                                          <td>{{ $ativ->codigoatividade }}</td>
-                                                          <td>{{ $ativ->descricaoatividade }}</td>
-
-
-
-
-
-                                                          <td>
-
-                                                            <a class="btn btn-info btn-icon-split" onclick="addItem({{$ativ->idatividades}})">
-                                                              <input type="text" hidden="true" value="{{$ativ->codigoatividade}}"  id="code{{$ativ->idatividades}}"></input>
-                                                              <input type="text" hidden="true" value="{{$ativ->descricaoatividade}}"  id="desc{{$ativ->idatividades}}"></input>
-                                                              <input type="text" hidden="true" value="{{$ativ->idatividades}}"  id="{{$ativ->idatividades}}"></input>
-                                                              <input type="text" hidden="true" value="{{$escp->idescopos}}"  id="escp{{$ativ->idatividades}}"></input>
-
-
-                                                              <span class="icon text-gray-100">
-                                                                <i class="fas fa-plus"></i>
-                                                              </span>
-                                                            </a>
-
-
-
-
-                                                              </span>
-                                                            </a>
-                                                          </td>
-                                                        </tr>
-                                                         @endforeach
-                                                      </tbody>
-
-                                                    </table>
-                                                  </div>
-                                                </div>
-                                              </div>
-
-
-                                          </div>
-                                        </div>
 
                  <ul id="dynamic-list" class="h6 mb-1 text-gray-800"></ul>
 
@@ -106,7 +43,7 @@
                    </div>
                    <div class="card-body">
                      <div class="table-responsive noroll">
-                       <table class="table table-bordered" id="datasTable" width="100%" cellspacing="0">
+                       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                          <thead>
                            <tr>
                              <th>ID</th>
@@ -117,6 +54,32 @@
                          </thead>
                          <tbody>
 
+                           @foreach ($ativ as $ativ)
+
+
+                             <tr>
+
+                               <td>{{ $ativ->idatividades }}</td>
+                               <td>{{ $ativ->codigoatividade }}</td>
+                               <td>{{ $ativ->descricaoatividade }}</td>
+                               <td>
+
+
+   <div class="pretty p-default p-round p-smooth p-plain p-toggle">
+    <input type="checkbox" id="check-{{$ativ->idatividades}}" name="check">
+
+    <div class="state p-success-o p-on">
+        <label> Remover</label>
+    </div>
+    <div class="state p-danger p-off">
+        <label> Adcionar</label>
+    </div>
+
+</div>
+                               </td>
+
+                             </tr>
+                              @endforeach
                          </tbody>
                        </table>
                      </div>
@@ -125,23 +88,24 @@
 
 
             </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" onclick="{{route('escp.index')}}">Cancelar</button>
+              <button class="btn btn-success" type="button" onclick="send()">Salvar</button>
           </div>
+          </div>
+
         </div>
 
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" action="{{route('escp.index')}}">Cancelar</button>
-        <button class="btn btn-success" type="button" onclick="send()">Adcionar</button>
-    </form>
 
-    </div>
-
+</form>
 
 
 
 
 @endsection
 @section('scripts')
+<link href="/css/custom.css" rel="stylesheet">
 <script src="js/app/escp.js"></script>
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>

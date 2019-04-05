@@ -20,18 +20,16 @@
 
       </div>
 
-
+    <form>
       <div class="modal-footer">
-        <form method="post" action="{{route('escp.destroy')}}">
 
-          @csrf
+
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-       <input hidden="true" name="id" type="text" value="{{$escp->idescopos}}" id="id"></input>
+        <button class="btn btn-danger" type="button" onclick="destroy({{$escp->idescopos}})">Excluir</button>
 
-        <button class="btn btn-danger" type="submit">Excluir</button>
-        </form>
+
       </div>
-
+</form>
     </div>
   </div>
 

@@ -41,8 +41,6 @@ class EscpController extends Controller
   }
 
 
-
-
  public function create(Request $request)
  {
 
@@ -65,13 +63,14 @@ class EscpController extends Controller
 
  }
 
+
  public function destroy(Request $request)
  {
-    $id=$request->post('id');
+    $id=$request->get('id');
 
-    $escp=Escp::findOrFail($id);
 
-    $escp->delete();
+    $escp=Escp::where('idescopos',$id)->delete();
+    $ativs=Escp_has_ativ::where('escopos_idescopos',$id)->delete();
 
     return Redirect::to('escp');
  }
@@ -101,20 +100,45 @@ foreach ($items as $item){
    $escp->nomeescopo=$name;
    $escp->update();
 }
-return [
-  $name
-];
 
-
+  return Redirect::to('escp');
 }
 
+
+
+
+ public function update(Request $request)
+ {
+
+   $items = isset($_REQUEST['items']) ? json_decode($_REQUEST['items']) : array();
+
+   $id = isset($_REQUEST['id']) ? json_decode($_REQUEST['id']) : array();
+
+   $name = isset($_REQUEST['name']) ? json_decode($_REQUEST['name']) : array();
+
+ $ativs_del=Escp_has_ativ::where('escopos_idescopos', '=',$id)->delete();
+
+ foreach ($items as $item){
+
+  Escp_has_ativ::create([
+    'atividades_idatividades' => $item,
+    'escopos_idescopos' => $id,
+ ]);
+
+    $escp=Escp::findOrFail($id);
+    $escp->nomeescopo=$name;
+    $escp->update();
+ }
+
+   return Redirect::to('escp');
+
+}
 
 
 
 public function edit(Request $request)
 {
 $id= isset($_REQUEST['id']) ? json_decode($_REQUEST['id']) : array();
-
 
 $escp1=Escp::where('idescopos', '=', $id)->orderBy('idescopos', 'desc')->first();
 $ativ1=DB::table('escopos_has_atividades')->where('escopos_idescopos','=',$id);
@@ -126,17 +150,6 @@ $escp1;
 
  return view('App/Pages/escp-edit', ["ativ1"=>$ativ1, "escp1"=>$escp1, "ativ"=>$ativ]);
 
-
 }
 
-
- public function update(Request $request)
- {
-   $id=$request->post('id');
-   $ativ=Ativ::findOrFail($id);
-   $ativ->descricaoatividade=$request->post('name');
-   $ativ->codigoatividade=$request->post('code');
-   $ativ->update();
-    return Redirect::to('ativ');
- }
 }
