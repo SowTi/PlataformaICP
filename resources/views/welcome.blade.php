@@ -73,7 +73,7 @@
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            
+
                         @endif
                     @endauth
                 </div>
@@ -83,12 +83,11 @@
             <div class="content">
                 <div class="title m-b-md">
 
-                    Plataforma ICP
+                    <img src="http://www.icp-la.com.br/teste/wp-content/themes/icpla/img/icp-latin-america.png">
                 </div>
 
                 <div class="links">
-                    <a href="http://icp-la.com.br">Site</a>
-                    <a href="">Github</a>
+                    <a>Plataforma Comercial</a>
                 </div>
             </div>
         </div>
