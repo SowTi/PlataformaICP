@@ -9,3 +9,9 @@
 2 - Mudar Configurações do Banco no arquivo ".ENV" localizado na raiz -- Estas configurações são necessárias para comunicação com o banco.
 
 3 - Executar bash {$php artisan migrate} -- Atualiza Banco com tabelas necessárias para aplicação.
+
+4-
+
+5-
+
+6
