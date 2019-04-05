@@ -83,11 +83,36 @@ Route::resource('newtestusers', 'App\NewTestUserController');
   Route::post('ativ.destroy', 'App\AtivController@destroy')->name('ativ.destroy');
   Route::post('ativ.create', 'App\AtivController@create')->name('ativ.create');
 
-  //Cadastros de Atividades
+  //Cadastros de Escopos
 
   Route::resource('escp', 'App\EscpController');
-  Route::post('escp.create', 'App\EscpController@create')->name('escp.create');
-  Route::get('escp.add', 'App\EscpController@add')->name('escp.add');
-  Route::post('escp.destroy', 'App\EscpController@destroy')->name('escp.destroy');
-  Route::get('escp.edit', 'App\EscpController@edit')->name('escp.edit');
-  Route::get('escp.update', 'App\EscpController@update')->name('escp.update');
+  Route::post('escp.create', 'App\EscpController@create')->name('escp.create');  // redireciona para página de criação
+  Route::get('escp.add', 'App\EscpController@add')->name('escp.add');  //Escreve no banco atividades / dados do escopo
+  Route::get('escp.destroy', 'App\EscpController@destroy')->name('escp.destroy'); // Apaga escopo + Atividades do banco
+  Route::get('escp.edit', 'App\EscpController@edit')->name('escp.edit'); //Redireciona para a pagina de edição
+  Route::get('escp.update', 'App\EscpController@update')->name('escp.update'); //Escreve no banco dados novos de uma proposta ja existente
+
+  //Cadastros de Contatos
+
+  Route::resource('contato', 'App\ContatoController');
+  Route::post('contato.create', 'App\ContatoController@create')->name('contato.create');
+  Route::get('contato.edit', 'App\ContatoController@edit')->name('contato.edit');
+  Route::post('contato.update', 'App\ContatoController@update')->name('contato.update');
+  Route::get('contato.destroy', 'App\ContatoController@destroy')->name('contato.destroy');
+
+
+  //Cadastros de Clientes
+
+  Route::resource('cliente', 'App\ClienteController');
+  Route::post('cliente.create', 'App\ClienteController@create')->name('cliente.create');
+  Route::get('cliente.edit', 'App\ClienteController@edit')->name('cliente.edit');
+  Route::post('cliente.update', 'App\ClienteController@update')->name('cliente.update');
+  Route::get('cliente.destroy', 'App\ClienteController@destroy')->name('cliente.destroy');
+
+  //Cadastros de Base
+
+  Route::resource('base', 'App\BaseController');
+
+  //Cadastros de Produtos
+
+  Route::resource('produto', 'App\ProdutoController');
