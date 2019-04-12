@@ -25,7 +25,7 @@
 
 
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-        <button class="btn btn-danger" type="button" onclick="destroy({{$cls->idcontatos}})">Excluir</button>
+        <button class="btn btn-danger" type="button" onclick="destroy({{$cls->idclientes}})">Excluir</button>
 
 
       </div>

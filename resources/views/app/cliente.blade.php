@@ -19,7 +19,7 @@
      <!--Tabela -->
        <div class="card-body">
          <div class="table-responsive noroll">
-           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+           <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">
              <thead>
                <tr>
 
@@ -82,7 +82,7 @@
 <!-- Scripts -->
 @section('scripts')
 <script src="js/app/cliente.js"></script>
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="vendor/datatables/jquery.dataTables.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 <script src="js/app/users.js"></script>
 @endsection
